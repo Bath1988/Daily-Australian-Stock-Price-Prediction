@@ -1,12 +1,13 @@
 ## **1. Introduction**
 
-The **Daily Australian Stock Price Prediction** is a web application designed to predict daily stock prices using historical data. The data fetched from YH Finance API hosted in Rapidapi api market place. The data fetched was limited to several major ASX stocks due to the limited resources using in the project to stay within the free tier. 
+The **Daily Australian Stock Price Prediction** is a web application designed to predict daily stock prices using historical data. The data fetched from YH Finance API hosted in Rapidapi api market place. The data fetched was limited to several major ASX stocks due to the limited resources used in the project.
 
-The prediction model utilised in the application will predict the closing stock price for the next business day. XGBOOST model is used as the prediction model for the application. Some other prediction models also compared with each other for training time and prediction accuracy.
+The prediction model predicts the closing stock price for the next business day. XGBOOST model is used as the prediction model for the application. 
 
-The application is accessible through interactive web application which hosted in Oracle cloud. Cloud infrustructure is controlled by code in CLI and code used is also available in the repository.
+Oracle cloud free tier is used deploy components of the application.
+The application is accessible through interactive web application.
 
-The project combines **data science**, **machine learning**, and **cloud computing** to create a scalable and efficient solution for stock market analysis. By leveraging daily stock data from the **Yahoo Finance API**, the application trains machine learning models to generate predictions, which are then made accessible through a user-friendly web interface.
+The project combines **data science**, **machine learning**, and **cloud computing** to create a scalable and efficient solution for stock market analysis. The development is done using agile methodology starting with minimalist application and add more features in later stage. 
 
 ### **1.4. Cloud Integration**
 To address scalability and deployment challenges, the project leverages **Oracle Cloud Infrastructure (OCI)** for:
@@ -33,7 +34,23 @@ The project addresses several challenges in stock market prediction:
 - **Scalability**: Handling large volumes of data and ensuring the application can scale with increasing demand.
 - **Real-Time Predictions**: Providing up-to-date predictions using the latest market data.
 
+### **1.5. Minimalist application **
 
+Initially minimalist application will be developed. This aplication has the ability to fetch data, build model and do the prediction, and visualise the results in web application.
+
+```
+asx-stock-predictor/
+├── app/                      # Backend
+│   ├── train.py              # XGBoost training script
+│   ├── predict.py            # Generate new predictions
+│   └── api.py                # FastAPI endpoints
+├── frontend/                 # Static files
+│   ├── index.html            # Dashboard
+│   └── script.js             # Fetch predictions
+└── infra/
+    ├── oci-setup.sh          # OCI VM provisioning
+    └── deploy.sh             # Deployment script
+```
 ### **1.5. Project Goals**
 The primary goals of the project are:
 - **Automation**: Automate the process of data fetching, model training, and prediction.
@@ -41,6 +58,7 @@ The primary goals of the project are:
 - **Scalability**: Ensure the application can handle increasing amounts of data and users (This is in production).
 - **Reproducibility**: Use containerization and infrastructure-as-code to ensure consistent deployment across environments.
 
+Final structure of the project will be similar to this. But this foldar structure can be changed as needed. The objective of this is only to understand different moving parts of the project.
 ```
 my-oci-project/
 ├── Dockerfile              # Dockerfile for containerization
