@@ -12,10 +12,11 @@ logs/
 
 # Ignore data files
 data/
-
+data.json
 # Ignore IDE-specific files
 .vscode/
 .idea/
 
 # Ignore environment files
 .env
+scripts/
