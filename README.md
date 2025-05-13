@@ -1,19 +1,19 @@
 ## **1. Introduction**
 
-The **Daily Australian Stock Price Prediction** is a web application designed to predict daily stock prices using historical data. The data fetched from YH Finance API hosted in Rapidapi api market place. The data fetched was limited to several major ASX stocks due to the limited resources used in the project.
+The **Daily Australian Stock Price Prediction** is a web application designed to predict daily stock prices using historical data. The data fetched from YH Finance API hosted in Rapidapi api market place. 
 
-The prediction model predicts the closing stock price for the next business day. XGBOOST model is used as the prediction model for the application. 
+The prediction model predicts the closing stock price for the next business day. Different predictive models will be used to compare the predictive performance.
 
-Oracle cloud free tier is used deploy components of the application.
+Some components of the application will be deployed in aws cloud.
 The application is accessible through interactive web application.
 
-The project combines **data science**, **machine learning**, and **cloud computing** to create a scalable and efficient solution for stock market analysis. The development is done using agile methodology starting with minimalist application and add more features in later stage. 
+The development is starting with minimalist application and add more features in later stages. 
 
 ### **1.4. Cloud Integration**
-To address scalability and deployment challenges, the project leverages **Oracle Cloud Infrastructure (OCI)** for:
-- **Data Storage**: Storing raw and processed data in OCI Object Storage.
-- **Compute Resources**: Hosting the application on OCI Compute Instances.
-- **Automation**: Using Terraform for infrastructure provisioning and Docker for containerization.
+To address scalability and deployment challenges, the project leverages in AWS lambda for:
+- **Data Storage**: Storing raw and processed data in S3.
+- **Compute Resources**: Hosting the application in AWS lambda.
+
 
 ### **1.1. Data Science Workflow**
 The project follows a standard data science workflow, which includes:
@@ -58,67 +58,16 @@ The primary goals of the project are:
 - **Scalability**: Ensure the application can handle increasing amounts of data and users (This is in production).
 - **Reproducibility**: Use containerization and infrastructure-as-code to ensure consistent deployment across environments.
 
-Final structure of the project will be similar to this. But this foldar structure can be changed as needed. The objective of this is only to understand different moving parts of the project.
-```
-my-oci-project/
-├── Dockerfile              # Dockerfile for containerization
-├── .venv/                  # Python virtual environment (optional)
-├── .oci/                   # OCI CLI configuration and keys
-│   ├── config              # OCI CLI configuration file
-│   ├── oci_api_key.pem     # Private key file
-│   └── oci_api_key_public.pem # Public key file
-├── scripts/                # Automation scripts
-│   ├── deploy.sh           # Deployment script
-│   ├── fetch_data.sh       # Script to fetch stock data
-│   ├── train_model.sh      # Model training script
-│   └── cleanup.sh          # Cleanup script
-├── infrastructure/         # Infrastructure-as-Code (Terraform/Ansible)
-│   ├── main.tf             # Terraform configuration
-│   ├── variables.tf        # Terraform variables
-│   └── outputs.tf          # Terraform outputs
-├── src/                    # Application source code
-│   ├── app.py              # Main application (Flask/FastAPI)
-│   ├── models/             # ML models
-│   │   ├── train.py        # Training script
-│   │   └── predict.py      # Prediction script
-│   ├── routes/             # API routes
-│   │   └── stock_routes.py # Stock prediction API
-│   ├── utils/              # Helper utilities
-│   │   ├── data_fetcher.py # Fetch stock data
-│   │   ├── data_loader.py  # Load data from OCI Storage
-│   │   ├── db_utils.py     # Database utilities
-│   │   └── oci_utils.py    # OCI interaction utilities
-├── data/                   # Data storage
-│   ├── raw/                # Raw stock data
-│   └── processed/          # Processed predictions
-├── logs/                   # Log files
-│   ├── app.log             # Application logs
-│   ├── fetch_data.log      # Data fetching logs
-│   └── train_model.log     # Model training logs
-├── tests/                  # Unit and integration tests
-│   ├── test_data_fetcher.py # Test data fetching
-│   ├── test_routes.py      # Test API routes
-│   └── test_models.py      # Test ML models
-├── README.md               # Project documentation
-├── requirements.txt        # Python dependencies
-└── .gitignore              # Ignore unnecessary files
-```
+
 
 ## **Setup Instructions**
 
 ### **1. Prerequisites**
 Ensure you have the following installed:
 - Python (3.8 or later)
-- Oracle Cloud Infrastructure (OCI) CLI
-- Terraform (for infrastructure automation)
-- Docker (optional, for containerization)
 
 
 ## **Future Enhancements**
-- Enhance the scalability for peaktime using auto scaling and load balancing. 
-- Deploy model on OCI AI services.
-- Explore online machine learning models to reduce the computational cost in training.
-- Add more stocks to the application
 
 ## **Contributing**
 Since this is an **educational project**, contributions and suggestions are welcome!
