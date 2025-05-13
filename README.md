@@ -41,15 +41,13 @@ Initially minimalist application will be developed. This aplication has the abil
 ```
 asx-stock-predictor/
 ├── app/                      # Backend
-│   ├── train.py              # XGBoost training script
-│   ├── predict.py            # Generate new predictions
+│   ├── train.py              # Prophet model
+│   ├── predict.py            # Generate new prediction for closing stock price
 │   └── api.py                # FastAPI endpoints
-├── frontend/                 # Static files
-│   ├── index.html            # Dashboard
-│   └── script.js             # Fetch predictions
-└── infra/
-    ├── oci-setup.sh          # OCI VM provisioning
-    └── deploy.sh             # Deployment script
+├── frontend/                 # Frontend
+    ├── index.html            
+    └── script.js             
+
 ```
 ### **1.5. Project Goals**
 The primary goals of the project are:
