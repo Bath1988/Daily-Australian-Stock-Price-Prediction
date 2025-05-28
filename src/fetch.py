@@ -1,7 +1,7 @@
 import requests
 import json
 
-with open("src/credentials.txt") as f:
+with open("credentials.txt") as f:
     credentials = dict(line.strip().split("=") for line in f if "=" in line)
 
 url = "https://yahoo-finance15.p.rapidapi.com/api/v1/markets/stock/history"
