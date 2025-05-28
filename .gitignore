@@ -22,3 +22,5 @@ data.json
 scripts/
 
 credentials.txt
+.aws-commands.txt
+bashrc.sh
