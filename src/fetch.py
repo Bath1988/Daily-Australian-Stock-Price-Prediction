@@ -1,13 +1,16 @@
 import requests
 import json
 
+with open("src/credentials.txt") as f:
+    credentials = dict(line.strip().split("=") for line in f if "=" in line)
+
 url = "https://yahoo-finance15.p.rapidapi.com/api/v1/markets/stock/history"
 
 querystring = {"symbol":"CBA.AX","interval":"1d","diffandsplits":"false"}
 
 headers = {
-	"x-rapidapi-key": "d79a3883b7msh00d863286e8567bp132781jsn1518cc26254e",
-	"x-rapidapi-host": "yahoo-finance15.p.rapidapi.com"
+    "x-rapidapi-key": credentials["RAPIDAPI_KEY"],
+    "x-rapidapi-host": credentials["RAPIDAPI_HOST"]
 }
 
 response = requests.get(url, headers=headers, params=querystring)

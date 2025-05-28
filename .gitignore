@@ -20,3 +20,5 @@ data.json
 # Ignore environment files
 .env
 scripts/
+
+credentials.txt
