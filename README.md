@@ -4,17 +4,6 @@ The **Daily Australian Stock Price Prediction** is a web application designed to
 
 The prediction model predicts the closing stock price for the next business day. Different predictive models will be used to compare the predictive performance.
 
-Some components of the application will be deployed in aws cloud.
-The application is accessible through interactive web application.
-
-The development is starting with minimalist application and add more features in later stages. 
-
-### **Cloud Integration**
-To address scalability and deployment challenges, the project leverages in AWS lambda for:
-- **Data Storage**: Storing raw and processed data in S3.
-- **Compute Resources**: Hosting the application in AWS lambda.
-
-
 ### **Data Science Workflow**
 The project follows a standard data science workflow, which includes:
 1. **Data Collection**: Fetching historical stock data from the Yahoo Finance API. Daily closing stock price data from CommonWealth Bank of Australia for     past two years was taken for the analysis.
@@ -47,10 +36,8 @@ The primary goals of the project are:
 - **Reproducibility**: Use containerization and infrastructure-as-code to ensure consistent deployment across environments.
 
 ## **Contributing**
-Since this is an **educational project**, contributions and suggestions are welcome!
+Since this project is not for commercial purposes and aimed for gaining knowledge, contributions and suggestions are highly regarded!
 
 ## **License**
 This project is open-source and available under the **MIT License**.
 
----
-_Developed as a portfolio project to enhance my skills in **cloud computing, data science, and machine learning**._ 🚀
