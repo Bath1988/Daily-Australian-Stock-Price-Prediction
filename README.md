@@ -17,7 +17,7 @@ To address scalability and deployment challenges, the project leverages in AWS l
 
 ### **Data Science Workflow**
 The project follows a standard data science workflow, which includes:
-1. **Data Collection**: Fetching historical stock data from the Yahoo Finance API.
+1. **Data Collection**: Fetching historical stock data from the Yahoo Finance API. Daily closing stock price data from CommonWealth Bank of Australia for     past two years was taken for the analysis.
 2. **Data Preprocessing**: Cleaning and preparing the data for analysis.
 3. **Feature Engineering**: Extracting meaningful features from the raw data.
 4. **Model Training**: Training machine learning models to predict stock prices.
@@ -36,7 +36,7 @@ The project addresses several challenges in stock market prediction:
 
 ### Minimalist application
 
-Initially minimalist application will be developed. This aplication has the ability to fetch data, build model and do the prediction, and visualise the results in web application in batch wise.
+Initially minimalist application developed from daily closing stock price data from CommonWealth Bank of Australia for past two years. This aplication has the ability to fetch data, build model and do the prediction, and visualise the results in web application in batch wise.
 
 
 ### **Project Goals**

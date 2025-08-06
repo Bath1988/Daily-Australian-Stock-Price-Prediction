@@ -12,7 +12,6 @@ logs/
 
 # Ignore data files
 
-data.json
 # Ignore IDE-specific files
 .vscode/
 .idea/
