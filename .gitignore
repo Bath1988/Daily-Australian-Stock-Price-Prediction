@@ -11,7 +11,7 @@ __pycache__/
 logs/
 
 # Ignore data files
-data/
+
 data.json
 # Ignore IDE-specific files
 .vscode/
