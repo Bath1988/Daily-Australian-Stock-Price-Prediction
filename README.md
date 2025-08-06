@@ -25,9 +25,9 @@ The project follows a standard data science workflow, which includes:
 6. **Deployment**: Deploying the trained model as a web application for real-time predictions.
 
 
-This project uses machine learning algorithms (e.g., LSTM, ARIMA) to predict stock prices, providing users with actionable insights for investment decisions.
+This project uses machine learning algorithms such as linear regression, xgboost and prophet to predict stock prices. These models were compaired against three baseline naive models for their prediction accuracy.
 
-### **1.3. Challenges Addressed**
+### **1.3. Challenges of the stock market value prediction**
 The project addresses several challenges in stock market prediction:
 - **Data Quality**: Ensuring the uptodate historical stock data.
 - **Model Complexity**: Balancing model training time and prediction accuracy.
@@ -36,36 +36,15 @@ The project addresses several challenges in stock market prediction:
 
 ### **1.5. Minimalist application **
 
-Initially minimalist application will be developed. This aplication has the ability to fetch data, build model and do the prediction, and visualise the results in web application.
+Initially minimalist application will be developed. This aplication has the ability to fetch data, build model and do the prediction, and visualise the results in web application in batch wise.
 
-```
-asx-stock-predictor/
-├── app/                      # Backend
-│   ├── train.py              # Prophet model
-│   ├── predict.py            # Generate new prediction for closing stock price
-│   └── api.py                # FastAPI endpoints
-├── frontend/                 # Frontend
-    ├── index.html            
-    └── script.js             
 
-```
 ### **1.5. Project Goals**
 The primary goals of the project are:
 - **Automation**: Automate the process of data fetching, model training, and prediction.
 - **Accessibility**: Provide a user-friendly web interface for accessing predictions.
-- **Scalability**: Ensure the application can handle increasing amounts of data and users (This is in production).
+- **Scalability**: Ensure the application can handle increasing amounts of data and users.
 - **Reproducibility**: Use containerization and infrastructure-as-code to ensure consistent deployment across environments.
-
-
-
-## **Setup Instructions**
-
-### **1. Prerequisites**
-Ensure you have the following installed:
-- Python (3.8 or later)
-
-
-## **Future Enhancements**
 
 ## **Contributing**
 Since this is an **educational project**, contributions and suggestions are welcome!
