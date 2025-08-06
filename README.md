@@ -34,7 +34,7 @@ The project addresses several challenges in stock market prediction:
 - **Scalability**: Handling large volumes of data and ensuring the application can scale with increasing demand.
 - **Real-Time Predictions**: Providing up-to-date predictions using the latest market data.
 
-### **Minimalist application **
+### Minimalist application
 
 Initially minimalist application will be developed. This aplication has the ability to fetch data, build model and do the prediction, and visualise the results in web application in batch wise.
 
