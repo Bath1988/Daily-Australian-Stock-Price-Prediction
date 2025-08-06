@@ -23,17 +23,12 @@ The project addresses several challenges in stock market prediction:
 - **Scalability**: Handling large volumes of data and ensuring the application can scale with increasing demand.
 - **Real-Time Predictions**: Providing up-to-date predictions using the latest market data.
 
-### Minimalist application
-
-Initially minimalist application developed from daily closing stock price data from CommonWealth Bank of Australia for past two years. This aplication has the ability to fetch data, build model and do the prediction, and visualise the results in web application in batch wise.
-
-
 ### **Project Goals**
 The primary goals of the project are:
-- **Automation**: Automate the process of data fetching, model training, and prediction.
-- **Accessibility**: Provide a user-friendly web interface for accessing predictions.
-- **Scalability**: Ensure the application can handle increasing amounts of data and users.
-- **Reproducibility**: Use containerization and infrastructure-as-code to ensure consistent deployment across environments.
+- **Predict next day closing stock price**
+- **Naive models**: Compaire different naive models 
+- **Machine learning for time series forcasting**: Impliment different machine learning models and compare them with naive models.
+- **Model Validation**: Machine learning models were validated using walk forward validation.
 
 ## **Contributing**
 Since this project is not for commercial purposes and aimed for gaining knowledge, contributions and suggestions are highly regarded!
