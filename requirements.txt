@@ -1,0 +1,8 @@
+requests
+json
+fastapi
+prophet
+pandas 
+numpy 
+sklearn
+xgboost
