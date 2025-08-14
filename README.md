@@ -1,6 +1,6 @@
 ## **1. Introduction**
 
-The **Daily Australian Stock Price Prediction** is a application designed to predict daily stock prices using historical data. The data fetched from YH Finance API hosted in Rapidapi api market place. 
+The **Daily Australian Stock Price Prediction** is an application designed to predict daily stock prices using historical data. The data fetched from YH Finance API hosted in Rapidapi api market place. 
 
 The prediction model predicts the closing stock price for the next business day. Different predictive models will be used to compare the predictive performance.
 
