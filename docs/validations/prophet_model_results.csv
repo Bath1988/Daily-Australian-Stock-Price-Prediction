@@ -1,0 +1,2 @@
+model,target,rmse,mae
+prophet,closing_price,5.287727231980033,4.191072969638934

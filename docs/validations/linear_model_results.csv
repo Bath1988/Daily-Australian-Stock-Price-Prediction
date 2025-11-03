@@ -1,0 +1,3 @@
+model,target,rmse,mae
+linear_regression,closing_price,2.230913283634097,1.6600319792353906
+linear_regression,price_diff,2.240059701505686,1.6652003572505971
