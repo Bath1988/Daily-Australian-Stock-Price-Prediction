@@ -1,67 +1,56 @@
 from sklearn.metrics import root_mean_squared_error, mean_absolute_error
-from sklearn.linear_model import LinearRegression
+from xgboost import XGBRegressor
 from b_feature_engineering import df_prelag, df_clolag
 import pandas as pd
 import os
 import csv
 
-# This function evaluate linear model for the initial train size and iterating forward creating models for each day
-# Prediction is done for each model using model created in each iteration
-def linear_model(df, train_size = 365, target = '', index = 'date'):
+def xgboost_model(df, train_size = 365, target = '', index = 'date'):
     preds = []
     actuals = []
     dates = []
     X = df.drop(columns= [index, target])
     Y = df[target]
-  
+    model = (XGBRegressor(
+            objective="reg:squarederror",
+            max_depth=7,
+            learning_rate=0.001,
+            n_estimators=150,
+            random_state=42))
     for i in range(train_size, len(df)):
         X_train = X.iloc[:i]
         y_train = Y.iloc[:i]
         X_test = X.iloc[i:i+1]
         y_test = Y.iloc[i:i+1]
-
-        # simple model: linear regression
-        model = LinearRegression()
         model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
-
         preds.append(y_pred[0])
         actuals.append(y_test.values[0])
         dates.append(df.loc[i,index])
-
     df_results = (pd.DataFrame({
                     "date": dates,
                     "actual": actuals,
                     "predicted": preds }))
     return df_results
 
-
 # Directory and file for validation results
 val_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../docs/validations"))
 os.makedirs(val_dir, exist_ok=True)
-val_path = os.path.join(val_dir, "linear_model_results.csv")
+val_path = os.path.join(val_dir, "xgboost_model_results.csv")
 header = ["model", "target", "rmse", "mae"]
 write_header = not os.path.exists(val_path)
 
-# First model: closing price
-df_eval1 = df_clolag.copy()
-df_eval = linear_model(df = df_eval1, target = 'closing_price')
-rmse1 = root_mean_squared_error(df_eval.actual, df_eval.predicted)
-mae1 = mean_absolute_error(df_eval.actual, df_eval.predicted)
-row1 = ["linear_regression", "closing_price", rmse1, mae1]
-
-# Second model: price_diff
-df_eval2 = df_prelag.copy()
-df_eval = linear_model(df = df_prelag.drop(columns=["closing_price", "clolag_1"]), target = 'price_diff')
-rmse2 = root_mean_squared_error(df_eval.actual, df_eval.predicted)
-mae2 = mean_absolute_error(df_eval.actual, df_eval.predicted)
-row2 = ["linear_regression", "price_diff", rmse2, mae2]
+# XGBoost model for price_diff
+df = df_prelag.drop(columns=["closing_price", "clolag_1"]).copy()
+df_eval = xgboost_model(df = df , target = 'price_diff')
+rmse = root_mean_squared_error(df_eval.actual, df_eval.predicted)
+mae = mean_absolute_error(df_eval.actual, df_eval.predicted)
+row = ["xgboost", "price_diff", rmse, mae]
 
 # Write results
 with open(val_path, "a", newline="") as f:
     writer = csv.writer(f)
     if write_header:
         writer.writerow(header)
-    writer.writerow(row1)
-    writer.writerow(row2)
+    writer.writerow(row)
 print(f"Validation results saved to {val_path}")
